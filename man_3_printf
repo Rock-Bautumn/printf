@@ -1,0 +1,29 @@
+NAME
+     _printf -- formatted output
+
+SYNOPSIS
+     int _printf (const char *format, ...);
+
+DESCRIPTION
+     The _printf() function produces output according to a format.
+	 The format string is a character string passed to the function. It is
+	 composed of zero or more directives, conversion specifications as indicated
+	 by '%' followed by a specifier.
+	 This function is similar to the <stdio.h> printf()
+
+Conversion Specifiers
+These specifiers follow the '%' character and indicate conversion type.
+
+	  c - corresponding optional argument is converted to type unsigned char
+
+	  s - corresponding optional argument is of type char *
+
+	  % - if another '%' is passed a specifier to '%', a single '%' character is
+	  printed to standard output.
+
+	  d, i - corresponding optional argument is converted into signed decimal
+	  notation
+
+RETURN VALUE
+The return value of _printf is the number of printed characters (excluding the
+null byte used to end output to strings)
