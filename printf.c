@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		if (format[i] == 37)
 		{
 			i++;
-			switch(format[i])
+			switch (format[i])
 			{
 			case 'd':
 				printedchars += printint(va_arg(args, int));
@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			case 'c':
 				printedchars += printchar(va_arg(args, int));
 				break;
- 			case 's':
+			case 's':
 				printedchars += printstring(va_arg(args, char *));
 				break;
 			case '%':
@@ -51,7 +51,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-
 	return (printedchars);
 }
 
@@ -135,27 +134,28 @@ int printpercent(void)
 /**
  * _itoa - converts into to string
  * @value: the int to convert
+ * @newString: String to store converted int
  * Return: string conversion of the int
  */
-char* _itoa(int value, char *newString)
+char *_itoa(int value, char *newString)
 {
-    int i = 0;
-    int n = value;
-    int r;
+	int i = 0;
+	int n = value;
+	int r;
 
-    newString[11] =  '\0';
-    if (n < 0)
-    {
-	    n = -n;
-    }
-    while (n)
-    {
-	    r = n % 10;
-	    newString[11 - i - 1] = r + 48;
-	    n = n / 10;
-	    i++;
-    }
-    if (value < 0)
+	newString[11] =  '\0';
+	if (n < 0)
+	{
+		n = -n;
+	}
+	while (n)
+	{
+		r = n % 10;
+		newString[11 - i - 1] = r + 48;
+		n = n / 10;
+		i++;
+	}
+	if (value < 0)
 	{
 		i++;
 		newString[11 - i] = '-';
