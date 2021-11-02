@@ -5,7 +5,7 @@ void cprint(char c);
 int printint(int);
 int printchar(char);
 int printstring(char *);
-char *itoa(int);
+char *_itoa(int, char *);
 int printpercent(void);
 int _printf(const char *format, ...);
 

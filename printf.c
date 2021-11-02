@@ -86,15 +86,22 @@ int printchar(char c)
  */
 int printint(int n)
 {
-	char *string = itoa(n);
+	char *string;
+	char *outstring;
 	int i = 0;
 
-	while (string[i] != '\0')
+	string = malloc(sizeof(char) * 12);
+	if (string == NULL)
 	{
-		write(1, &string[i], 1);
+		free(string);
+	}
+	outstring = _itoa(n, string);
+	while (outstring[i] != '\0')
+	{
+		write(1, &outstring[i], 1);
 		i++;
 	}
-	write(1, '\0', 1);
+	/*write(1, '\0', 1); */
 	return (i);
 }
 
@@ -122,28 +129,21 @@ int printstring(char *str)
  */
 int printpercent(void)
 {
-	write(1, (char *)37, 1);
+	cprint('%');
 	return (1);
 }
 /**
- * itoa - converts into to string
+ * _itoa - converts into to string
  * @value: the int to convert
  * Return: string conversion of the int
  */
-char* itoa(int value)
+char* _itoa(int value, char *newString)
 {
     int i = 0;
     int n = value;
     int r;
-    char *newString;
 
-    newString = malloc(sizeof(char) * 12);
-    if (newString == NULL)
-    {
-	    free(newString);
-	    return NULL;
-    }
-    newString[12] = '\0';
+    newString[11] =  '\0';
     if (n < 0)
     {
 	    n = -n;
@@ -151,12 +151,14 @@ char* itoa(int value)
     while (n)
     {
 	    r = n % 10;
-	    newString[12 - i - 1] = r + 48;
+	    newString[11 - i - 1] = r + 48;
 	    n = n / 10;
 	    i++;
     }
     if (value < 0)
-	    newString[12 - i - 1] = '-';
-
-    return (newString + 12 - i);
+	{
+		i++;
+		newString[11 - i] = '-';
+	}
+	return (newString + 11 - i);
 }
