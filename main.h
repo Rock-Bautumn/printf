@@ -10,8 +10,8 @@ int printpercent(void);
 int _printf(const char *format, ...);
 
 /*
- * /**
- ** struct pr - Struct of Print func
+ *
+ * struct pr - Struct of Print func
  *
  * @ar: Argument passed
  * @f: The function associated
