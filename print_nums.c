@@ -11,7 +11,7 @@ int printint(va_list n)
 {
 	char *string;
 	char *outstring;
-        int i = 0;
+	int i = 0;
 	int x = va_arg(n, int);
 
 	int *y = &x;
