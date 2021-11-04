@@ -48,6 +48,7 @@ Output : This is an example of using _printf
 .Pp
 
 _printf("Of our fruit, %d%% are %s.\n", npercent, "strawberries");
+.Pp
 Output : Of our fruit, 50% are strawberries.
 
 .Sh RETURN VALUE              \" File used or created by the topic of the man page
