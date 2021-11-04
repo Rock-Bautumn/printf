@@ -1,9 +1,0 @@
-# compiled source
-
-*.out
-
-# any main files
-
-main*.c
-main.c
-*main.c
