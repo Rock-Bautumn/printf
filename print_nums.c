@@ -14,6 +14,15 @@ int printint(va_list n)
 	int i = 0;
 	int x = va_arg(n, int);
 
+	int *y = &x;
+
+	*y = x / -1;
+	x = *y * -1;
+	if (x == 0)
+	{
+		cprint('0');
+		return (1);
+	}
 	if (!x)
 		return (0);
 	string = malloc(sizeof(char) * 12);
@@ -28,5 +37,6 @@ int printint(va_list n)
 		i++;
 	}
 	/*write(1, '\0', 1); */
+	free(string);
 	return (i);
 }
