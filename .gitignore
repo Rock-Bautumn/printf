@@ -1,0 +1,10 @@
+# ignore compiled files
+
+*.out
+
+# ignore main source files
+
+main.c
+*main.c
+main*.c
+*main*.c
