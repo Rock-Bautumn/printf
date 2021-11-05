@@ -13,7 +13,10 @@ int printchar(va_list n)
 	char c = va_arg(n, int);
 
 	if (c == '\0')
+	{
+		cprint('\0');
 		return (1);
+	}
 	if (!c)
 		return (0);
 	cprint(c);
