@@ -25,6 +25,8 @@ int _printf(const char *format, ...)
 		if (format[i] == 37)
 		{
 			i++;
+			if (format[i] == '\0')
+				return (-1);
 			if (format[i] == 37)
 			{
 				printedchars += printpercent();
@@ -36,18 +38,14 @@ int _printf(const char *format, ...)
 				{
 					printedchars += printpercent();
 					if (format[i])
-					{
 						printedchars += cprint(format[i]);
-					}
 				}
 				else
 					printedchars += ptr(args);
 			}
 		}
 		else
-		{
 			printedchars += cprint(format[i]);
-		}
 		i++;
 	}
 	return (printedchars);
