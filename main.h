@@ -10,6 +10,7 @@ char *_itoa(int, char *);
 int printpercent(void);
 int _printf(const char *format, ...);
 int (*get_op_func(char s))(va_list);
+int printintmin(void);
 
 /**
  * struct op - Struct op
